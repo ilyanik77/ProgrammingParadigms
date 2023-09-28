@@ -80,7 +80,7 @@
             status = "stopped";
         };
 
-
+        // Выход из паузы
         document.getElementById("reStart").onclick = function () {
             if (status === "stopped") {
                 interval = window.setInterval(stopWatch, 1000);
