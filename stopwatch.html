@@ -10,6 +10,7 @@
     <div id="timer">00:00:00</div>
     <button id="start">Старт</button>
     <button id="stop">Пауза</button>
+    <button id="reStart">Выход из паузы</button>
     <button id="reset">Сброс</button>
 
 
@@ -77,6 +78,14 @@
         document.getElementById("stop").onclick = function () {
             window.clearInterval(interval);
             status = "stopped";
+        };
+
+
+        document.getElementById("reStart").onclick = function () {
+            if (status === "stopped") {
+                interval = window.setInterval(stopWatch, 1000);
+                status = "started";
+            }
         };
 
         // "Сброс"
